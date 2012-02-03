@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		229AC9FF14DBA2B2004350CA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229AC9FE14DBA2B2004350CA /* Cocoa.framework */; };
+		229ACA0914DBA2B2004350CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 229ACA0714DBA2B2004350CA /* InfoPlist.strings */; };
+		229ACA0D14DBA2B2004350CA /* RoseBandwidthParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 229ACA0C14DBA2B2004350CA /* RoseBandwidthParser.m */; };
+		229ACA1514DBA2B2004350CA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229ACA1414DBA2B2004350CA /* SenTestingKit.framework */; };
+		229ACA1614DBA2B2004350CA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229AC9FE14DBA2B2004350CA /* Cocoa.framework */; };
+		229ACA1914DBA2B2004350CA /* RoseBandwidthParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229AC9FB14DBA2B2004350CA /* RoseBandwidthParser.framework */; };
+		229ACA1F14DBA2B2004350CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 229ACA1D14DBA2B2004350CA /* InfoPlist.strings */; };
+		229ACA2214DBA2B3004350CA /* RoseBandwidthParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 229ACA2114DBA2B3004350CA /* RoseBandwidthParserTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		229ACA1714DBA2B2004350CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 229AC9F114DBA2B1004350CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 229AC9FA14DBA2B2004350CA;
+			remoteInfo = RoseBandwidthParser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		229AC9FB14DBA2B2004350CA /* RoseBandwidthParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RoseBandwidthParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		229AC9FE14DBA2B2004350CA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		229ACA0114DBA2B2004350CA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		229ACA0214DBA2B2004350CA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		229ACA0314DBA2B2004350CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		229ACA0614DBA2B2004350CA /* RoseBandwidthParser-Info.plist */ = {isa = PBXFileReference; path = "RoseBandwidthParser-Info.plist"; sourceTree = "<group>"; };
+		229ACA0814DBA2B2004350CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		229ACA0A14DBA2B2004350CA /* RoseBandwidthParser-Prefix.pch */ = {isa = PBXFileReference; path = "RoseBandwidthParser-Prefix.pch"; sourceTree = "<group>"; };
+		229ACA0B14DBA2B2004350CA /* RoseBandwidthParser.h */ = {isa = PBXFileReference; path = RoseBandwidthParser.h; sourceTree = "<group>"; };
+		229ACA0C14DBA2B2004350CA /* RoseBandwidthParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoseBandwidthParser.m; sourceTree = "<group>"; };
+		229ACA1314DBA2B2004350CA /* RoseBandwidthParserTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoseBandwidthParserTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		229ACA1414DBA2B2004350CA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		229ACA1C14DBA2B2004350CA /* RoseBandwidthParserTests-Info.plist */ = {isa = PBXFileReference; path = "RoseBandwidthParserTests-Info.plist"; sourceTree = "<group>"; };
+		229ACA1E14DBA2B2004350CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		229ACA2014DBA2B2004350CA /* RoseBandwidthParserTests.h */ = {isa = PBXFileReference; path = RoseBandwidthParserTests.h; sourceTree = "<group>"; };
+		229ACA2114DBA2B3004350CA /* RoseBandwidthParserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoseBandwidthParserTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		229AC9F714DBA2B2004350CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				229AC9FF14DBA2B2004350CA /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		229ACA0F14DBA2B2004350CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				229ACA1514DBA2B2004350CA /* SenTestingKit.framework in Frameworks */,
+				229ACA1614DBA2B2004350CA /* Cocoa.framework in Frameworks */,
+				229ACA1914DBA2B2004350CA /* RoseBandwidthParser.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		229AC9EF14DBA2B1004350CA = {
+			isa = PBXGroup;
+			children = (
+				229ACA0414DBA2B2004350CA /* RoseBandwidthParser */,
+				229ACA1A14DBA2B2004350CA /* RoseBandwidthParserTests */,
+				229AC9FD14DBA2B2004350CA /* Frameworks */,
+				229AC9FC14DBA2B2004350CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		229AC9FC14DBA2B2004350CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				229AC9FB14DBA2B2004350CA /* RoseBandwidthParser.framework */,
+				229ACA1314DBA2B2004350CA /* RoseBandwidthParserTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		229AC9FD14DBA2B2004350CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				229AC9FE14DBA2B2004350CA /* Cocoa.framework */,
+				229ACA1414DBA2B2004350CA /* SenTestingKit.framework */,
+				229ACA0014DBA2B2004350CA /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		229ACA0014DBA2B2004350CA /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				229ACA0114DBA2B2004350CA /* AppKit.framework */,
+				229ACA0214DBA2B2004350CA /* CoreData.framework */,
+				229ACA0314DBA2B2004350CA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		229ACA0414DBA2B2004350CA /* RoseBandwidthParser */ = {
+			isa = PBXGroup;
+			children = (
+				229ACA0B14DBA2B2004350CA /* RoseBandwidthParser.h */,
+				229ACA0C14DBA2B2004350CA /* RoseBandwidthParser.m */,
+				229ACA0514DBA2B2004350CA /* Supporting Files */,
+			);
+			path = RoseBandwidthParser;
+			sourceTree = "<group>";
+		};
+		229ACA0514DBA2B2004350CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				229ACA0614DBA2B2004350CA /* RoseBandwidthParser-Info.plist */,
+				229ACA0714DBA2B2004350CA /* InfoPlist.strings */,
+				229ACA0A14DBA2B2004350CA /* RoseBandwidthParser-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		229ACA1A14DBA2B2004350CA /* RoseBandwidthParserTests */ = {
+			isa = PBXGroup;
+			children = (
+				229ACA2014DBA2B2004350CA /* RoseBandwidthParserTests.h */,
+				229ACA2114DBA2B3004350CA /* RoseBandwidthParserTests.m */,
+				229ACA1B14DBA2B2004350CA /* Supporting Files */,
+			);
+			path = RoseBandwidthParserTests;
+			sourceTree = "<group>";
+		};
+		229ACA1B14DBA2B2004350CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				229ACA1C14DBA2B2004350CA /* RoseBandwidthParserTests-Info.plist */,
+				229ACA1D14DBA2B2004350CA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		229AC9F814DBA2B2004350CA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		229AC9FA14DBA2B2004350CA /* RoseBandwidthParser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 229ACA2514DBA2B3004350CA /* Build configuration list for PBXNativeTarget "RoseBandwidthParser" */;
+			buildPhases = (
+				229AC9F614DBA2B2004350CA /* Sources */,
+				229AC9F714DBA2B2004350CA /* Frameworks */,
+				229AC9F814DBA2B2004350CA /* Headers */,
+				229AC9F914DBA2B2004350CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RoseBandwidthParser;
+			productName = RoseBandwidthParser;
+			productReference = 229AC9FB14DBA2B2004350CA /* RoseBandwidthParser.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		229ACA1214DBA2B2004350CA /* RoseBandwidthParserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 229ACA2814DBA2B3004350CA /* Build configuration list for PBXNativeTarget "RoseBandwidthParserTests" */;
+			buildPhases = (
+				229ACA0E14DBA2B2004350CA /* Sources */,
+				229ACA0F14DBA2B2004350CA /* Frameworks */,
+				229ACA1014DBA2B2004350CA /* Resources */,
+				229ACA1114DBA2B2004350CA /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				229ACA1814DBA2B2004350CA /* PBXTargetDependency */,
+			);
+			name = RoseBandwidthParserTests;
+			productName = RoseBandwidthParserTests;
+			productReference = 229ACA1314DBA2B2004350CA /* RoseBandwidthParserTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		229AC9F114DBA2B1004350CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 229AC9F414DBA2B1004350CA /* Build configuration list for PBXProject "RoseBandwidthParser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 229AC9EF14DBA2B1004350CA;
+			productRefGroup = 229AC9FC14DBA2B2004350CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				229AC9FA14DBA2B2004350CA /* RoseBandwidthParser */,
+				229ACA1214DBA2B2004350CA /* RoseBandwidthParserTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		229AC9F914DBA2B2004350CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				229ACA0914DBA2B2004350CA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		229ACA1014DBA2B2004350CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				229ACA1F14DBA2B2004350CA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		229ACA1114DBA2B2004350CA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		229AC9F614DBA2B2004350CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				229ACA0D14DBA2B2004350CA /* RoseBandwidthParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		229ACA0E14DBA2B2004350CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				229ACA2214DBA2B3004350CA /* RoseBandwidthParserTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		229ACA1814DBA2B2004350CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 229AC9FA14DBA2B2004350CA /* RoseBandwidthParser */;
+			targetProxy = 229ACA1714DBA2B2004350CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		229ACA0714DBA2B2004350CA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				229ACA0814DBA2B2004350CA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		229ACA1D14DBA2B2004350CA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				229ACA1E14DBA2B2004350CA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		229ACA2314DBA2B3004350CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		229ACA2414DBA2B3004350CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		229ACA2614DBA2B3004350CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RoseBandwidthParser/RoseBandwidthParser-Prefix.pch";
+				INFOPLIST_FILE = "RoseBandwidthParser/RoseBandwidthParser-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		229ACA2714DBA2B3004350CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RoseBandwidthParser/RoseBandwidthParser-Prefix.pch";
+				INFOPLIST_FILE = "RoseBandwidthParser/RoseBandwidthParser-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		229ACA2914DBA2B3004350CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RoseBandwidthParser/RoseBandwidthParser-Prefix.pch";
+				INFOPLIST_FILE = "RoseBandwidthParserTests/RoseBandwidthParserTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		229ACA2A14DBA2B3004350CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RoseBandwidthParser/RoseBandwidthParser-Prefix.pch";
+				INFOPLIST_FILE = "RoseBandwidthParserTests/RoseBandwidthParserTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		229AC9F414DBA2B1004350CA /* Build configuration list for PBXProject "RoseBandwidthParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				229ACA2314DBA2B3004350CA /* Debug */,
+				229ACA2414DBA2B3004350CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		229ACA2514DBA2B3004350CA /* Build configuration list for PBXNativeTarget "RoseBandwidthParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				229ACA2614DBA2B3004350CA /* Debug */,
+				229ACA2714DBA2B3004350CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		229ACA2814DBA2B3004350CA /* Build configuration list for PBXNativeTarget "RoseBandwidthParserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				229ACA2914DBA2B3004350CA /* Debug */,
+				229ACA2A14DBA2B3004350CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 229AC9F114DBA2B1004350CA /* Project object */;
+}
