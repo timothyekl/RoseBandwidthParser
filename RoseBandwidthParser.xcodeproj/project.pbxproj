@@ -10,11 +10,19 @@
 		229AC9FF14DBA2B2004350CA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229AC9FE14DBA2B2004350CA /* Cocoa.framework */; };
 		229ACA0914DBA2B2004350CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 229ACA0714DBA2B2004350CA /* InfoPlist.strings */; };
 		229ACA0D14DBA2B2004350CA /* RoseBandwidthParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 229ACA0C14DBA2B2004350CA /* RoseBandwidthParser.m */; };
-		229ACA1514DBA2B2004350CA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229ACA1414DBA2B2004350CA /* SenTestingKit.framework */; };
 		229ACA1614DBA2B2004350CA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229AC9FE14DBA2B2004350CA /* Cocoa.framework */; };
 		229ACA1914DBA2B2004350CA /* RoseBandwidthParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229AC9FB14DBA2B2004350CA /* RoseBandwidthParser.framework */; };
 		229ACA1F14DBA2B2004350CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 229ACA1D14DBA2B2004350CA /* InfoPlist.strings */; };
 		229ACA2214DBA2B3004350CA /* RoseBandwidthParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 229ACA2114DBA2B3004350CA /* RoseBandwidthParserTests.m */; };
+		22BDA1A314DC693000BF6A9C /* RBUsageRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BDA1A114DC693000BF6A9C /* RBUsageRecord.h */; };
+		22BDA1A414DC693000BF6A9C /* RBUsageRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDA1A214DC693000BF6A9C /* RBUsageRecord.m */; };
+		22BDA1A714DC6A9100BF6A9C /* RBTotalUsageRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BDA1A514DC6A9100BF6A9C /* RBTotalUsageRecord.h */; };
+		22BDA1A814DC6A9100BF6A9C /* RBTotalUsageRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDA1A614DC6A9100BF6A9C /* RBTotalUsageRecord.m */; };
+		22BDA1AB14DC6B1500BF6A9C /* RBMachineUsageRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BDA1A914DC6B1500BF6A9C /* RBMachineUsageRecord.h */; };
+		22BDA1AC14DC6B1500BF6A9C /* RBMachineUsageRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDA1AA14DC6B1500BF6A9C /* RBMachineUsageRecord.m */; };
+		22BDA1AF14DC6EBA00BF6A9C /* RBMachineUsageRecordTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BDA1AD14DC6EBA00BF6A9C /* RBMachineUsageRecordTests.h */; };
+		22BDA1B414DC705600BF6A9C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229ACA1414DBA2B2004350CA /* SenTestingKit.framework */; };
+		22BDA1B514DC70FE00BF6A9C /* RBMachineUsageRecordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDA1AE14DC6EBA00BF6A9C /* RBMachineUsageRecordTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,17 +41,25 @@
 		229ACA0114DBA2B2004350CA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		229ACA0214DBA2B2004350CA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		229ACA0314DBA2B2004350CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		229ACA0614DBA2B2004350CA /* RoseBandwidthParser-Info.plist */ = {isa = PBXFileReference; path = "RoseBandwidthParser-Info.plist"; sourceTree = "<group>"; };
+		229ACA0614DBA2B2004350CA /* RoseBandwidthParser-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RoseBandwidthParser-Info.plist"; sourceTree = "<group>"; };
 		229ACA0814DBA2B2004350CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		229ACA0A14DBA2B2004350CA /* RoseBandwidthParser-Prefix.pch */ = {isa = PBXFileReference; path = "RoseBandwidthParser-Prefix.pch"; sourceTree = "<group>"; };
-		229ACA0B14DBA2B2004350CA /* RoseBandwidthParser.h */ = {isa = PBXFileReference; path = RoseBandwidthParser.h; sourceTree = "<group>"; };
+		229ACA0A14DBA2B2004350CA /* RoseBandwidthParser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RoseBandwidthParser-Prefix.pch"; sourceTree = "<group>"; };
+		229ACA0B14DBA2B2004350CA /* RoseBandwidthParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoseBandwidthParser.h; sourceTree = "<group>"; };
 		229ACA0C14DBA2B2004350CA /* RoseBandwidthParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoseBandwidthParser.m; sourceTree = "<group>"; };
 		229ACA1314DBA2B2004350CA /* RoseBandwidthParserTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoseBandwidthParserTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		229ACA1414DBA2B2004350CA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		229ACA1C14DBA2B2004350CA /* RoseBandwidthParserTests-Info.plist */ = {isa = PBXFileReference; path = "RoseBandwidthParserTests-Info.plist"; sourceTree = "<group>"; };
+		229ACA1C14DBA2B2004350CA /* RoseBandwidthParserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RoseBandwidthParserTests-Info.plist"; sourceTree = "<group>"; };
 		229ACA1E14DBA2B2004350CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		229ACA2014DBA2B2004350CA /* RoseBandwidthParserTests.h */ = {isa = PBXFileReference; path = RoseBandwidthParserTests.h; sourceTree = "<group>"; };
+		229ACA2014DBA2B2004350CA /* RoseBandwidthParserTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoseBandwidthParserTests.h; sourceTree = "<group>"; };
 		229ACA2114DBA2B3004350CA /* RoseBandwidthParserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoseBandwidthParserTests.m; sourceTree = "<group>"; };
+		22BDA1A114DC693000BF6A9C /* RBUsageRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBUsageRecord.h; sourceTree = "<group>"; };
+		22BDA1A214DC693000BF6A9C /* RBUsageRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBUsageRecord.m; sourceTree = "<group>"; };
+		22BDA1A514DC6A9100BF6A9C /* RBTotalUsageRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBTotalUsageRecord.h; sourceTree = "<group>"; };
+		22BDA1A614DC6A9100BF6A9C /* RBTotalUsageRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTotalUsageRecord.m; sourceTree = "<group>"; };
+		22BDA1A914DC6B1500BF6A9C /* RBMachineUsageRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBMachineUsageRecord.h; sourceTree = "<group>"; };
+		22BDA1AA14DC6B1500BF6A9C /* RBMachineUsageRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBMachineUsageRecord.m; sourceTree = "<group>"; };
+		22BDA1AD14DC6EBA00BF6A9C /* RBMachineUsageRecordTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBMachineUsageRecordTests.h; sourceTree = "<group>"; };
+		22BDA1AE14DC6EBA00BF6A9C /* RBMachineUsageRecordTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBMachineUsageRecordTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				229ACA1514DBA2B2004350CA /* SenTestingKit.framework in Frameworks */,
+				22BDA1B414DC705600BF6A9C /* SenTestingKit.framework in Frameworks */,
 				229ACA1614DBA2B2004350CA /* Cocoa.framework in Frameworks */,
 				229ACA1914DBA2B2004350CA /* RoseBandwidthParser.framework in Frameworks */,
 			);
@@ -110,6 +126,7 @@
 		229ACA0414DBA2B2004350CA /* RoseBandwidthParser */ = {
 			isa = PBXGroup;
 			children = (
+				22BDA19F14DC691A00BF6A9C /* Model */,
 				229ACA0B14DBA2B2004350CA /* RoseBandwidthParser.h */,
 				229ACA0C14DBA2B2004350CA /* RoseBandwidthParser.m */,
 				229ACA0514DBA2B2004350CA /* Supporting Files */,
@@ -133,6 +150,8 @@
 				229ACA2014DBA2B2004350CA /* RoseBandwidthParserTests.h */,
 				229ACA2114DBA2B3004350CA /* RoseBandwidthParserTests.m */,
 				229ACA1B14DBA2B2004350CA /* Supporting Files */,
+				22BDA1AD14DC6EBA00BF6A9C /* RBMachineUsageRecordTests.h */,
+				22BDA1AE14DC6EBA00BF6A9C /* RBMachineUsageRecordTests.m */,
 			);
 			path = RoseBandwidthParserTests;
 			sourceTree = "<group>";
@@ -146,6 +165,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		22BDA19F14DC691A00BF6A9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22BDA1A114DC693000BF6A9C /* RBUsageRecord.h */,
+				22BDA1A214DC693000BF6A9C /* RBUsageRecord.m */,
+				22BDA1A514DC6A9100BF6A9C /* RBTotalUsageRecord.h */,
+				22BDA1A614DC6A9100BF6A9C /* RBTotalUsageRecord.m */,
+				22BDA1A914DC6B1500BF6A9C /* RBMachineUsageRecord.h */,
+				22BDA1AA14DC6B1500BF6A9C /* RBMachineUsageRecord.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -153,6 +185,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22BDA1A314DC693000BF6A9C /* RBUsageRecord.h in Headers */,
+				22BDA1A714DC6A9100BF6A9C /* RBTotalUsageRecord.h in Headers */,
+				22BDA1AB14DC6B1500BF6A9C /* RBMachineUsageRecord.h in Headers */,
+				22BDA1AF14DC6EBA00BF6A9C /* RBMachineUsageRecordTests.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +299,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				229ACA0D14DBA2B2004350CA /* RoseBandwidthParser.m in Sources */,
+				22BDA1A414DC693000BF6A9C /* RBUsageRecord.m in Sources */,
+				22BDA1A814DC6A9100BF6A9C /* RBTotalUsageRecord.m in Sources */,
+				22BDA1AC14DC6B1500BF6A9C /* RBMachineUsageRecord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22BDA1B514DC70FE00BF6A9C /* RBMachineUsageRecordTests.m in Sources */,
 				229ACA2214DBA2B3004350CA /* RoseBandwidthParserTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +462,7 @@
 				229ACA2714DBA2B3004350CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		229ACA2814DBA2B3004350CA /* Build configuration list for PBXNativeTarget "RoseBandwidthParserTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +471,7 @@
 				229ACA2A14DBA2B3004350CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

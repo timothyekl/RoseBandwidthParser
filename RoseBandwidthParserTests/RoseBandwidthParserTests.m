@@ -24,9 +24,8 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in RoseBandwidthParserTests");
+- (void)testMath {
+    STAssertEquals(1 + 1, 2, @"Compiler isn't feeling well today");
 }
 
 @end
