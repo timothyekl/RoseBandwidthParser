@@ -13,7 +13,7 @@
 @interface RBUsagePolicy : NSObject
 
 /**
- * Takes a dictionary mapping NSNumbers (lower boundaries in GB) to NSStrings
+ * Takes a dictionary mapping NSNumbers (lower boundaries in MB) to NSStrings
  * (bandwidth class names). Must include a value for kDefaultBandwidthPolicyKey.
  */
 - (id)initWithBandwidthBoundaries:(NSDictionary *)boundaries;

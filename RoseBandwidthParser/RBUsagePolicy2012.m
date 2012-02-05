@@ -12,9 +12,9 @@
 
 - (id)init {
     NSDictionary * boundaries = [NSDictionary dictionaryWithObjectsAndKeys:
-                                 @"Unlimited", [RBUsagePolicy defaultBandwidthPolicyKey],
-                                 @"1024k", [NSNumber numberWithFloat:4.0],
-                                 @"160k", [NSNumber numberWithFloat:4.5],
+                                 @"Unrestricted", [RBUsagePolicy defaultBandwidthPolicyKey],
+                                 @"1024k", [NSNumber numberWithFloat:4000.0],
+                                 @"160k", [NSNumber numberWithFloat:4500.0],
                                  nil];
     if((self = [super initWithBandwidthBoundaries:boundaries])) {
         

@@ -32,6 +32,13 @@
         STAssertEquals(record.actualUp, x, @"Actual up not saved accurately");
     }
     
+    record.username = @"test";
+    STAssertTrue([record.username isEqualToString:@"test"], @"Username not saved accurately.");
+    
+    NSDate * now = [NSDate date];
+    record.timestamp = now;
+    STAssertTrue([record.timestamp isEqualToDate:now], @"Timestamp not saved accurately.");
+    
 }
 
 @end

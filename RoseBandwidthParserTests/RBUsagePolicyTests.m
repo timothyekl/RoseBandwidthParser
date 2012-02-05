@@ -43,13 +43,13 @@
     RBUsagePolicy * policy = [[RBUsagePolicy2012 alloc] init];
     RBTotalUsageRecord * record = [[RBTotalUsageRecord alloc] initWithPolicy:policy];
     
-    [self performChecksForRecord:record withClass:@"Unlimited" minUsage:0.0f maxUsage:4.0f];
-    [self performChecksForRecord:record withClass:@"1024k" minUsage:4.0f maxUsage:4.5f];
-    [self performChecksForRecord:record withClass:@"160k" minUsage:4.5f maxUsage:6.0f];
+    [self performChecksForRecord:record withClass:@"Unrestricted" minUsage:0.0f maxUsage:4000.0f];
+    [self performChecksForRecord:record withClass:@"1024k" minUsage:4000.0f maxUsage:4500.0f];
+    [self performChecksForRecord:record withClass:@"160k" minUsage:4500.0f maxUsage:6000.0f];
 }
 
 - (void)performChecksForRecord:(RBTotalUsageRecord *)record withClass:(NSString *)bandwidthClass minUsage:(float)min maxUsage:(float)max {
-    for(float usage = min; usage < max; usage += 0.1f) {
+    for(float usage = min; usage < max; usage += 100.0f) {
         record.policyDown = usage;
         STAssertTrue([[record bandwidthClass] isEqualToString:bandwidthClass], @"Class mismatch for usage: %f", usage);
         
@@ -57,6 +57,12 @@
         record.policyDown = 0.0f;
         STAssertTrue([[record bandwidthClass] isEqualToString:bandwidthClass], @"Class mismatch for usage: %f", usage);
     }
+}
+
+- (void)testCurrentPolicy {
+    RBUsagePolicy * policy = [RBUsagePolicy currentPolicy];
+    STAssertNotNil(policy, @"Default policy should not be nil.");
+    STAssertTrue([policy isKindOfClass:[RBUsagePolicy2012 class]], @"Default policy is the wrong year.");
 }
 
 @end

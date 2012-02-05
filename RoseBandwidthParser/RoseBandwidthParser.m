@@ -24,12 +24,11 @@
 
 @synthesize dataSourceURL = _dataSourceURL;
 @synthesize delegate = _delegate;
+@synthesize username = _username;
+@synthesize password = _password;
 
 NSMutableData * _data;
 NSURLConnection * _conn;
-
-NSString * _username;
-NSString * _password;
 
 static RoseBandwidthParser * _defaultParser = NULL;
 
@@ -61,19 +60,22 @@ static RoseBandwidthParser * _defaultParser = NULL;
 #pragma mark -
 #pragma mark Actions
 
-- (void)beginScrapingWithUsername:(NSString *)username password:(NSString *)password {
-    _username = username;
-    _password = password;
-    
+- (void)beginScraping {
     NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:self.dataSourceURL
                                                                  cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData 
                                                              timeoutInterval:FETCH_TIMEOUT];
-    _conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    [_conn start];
+    _conn = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
     
     if([self.delegate respondsToSelector:@selector(parser:didDispatchPageRequest:)]) {
         [self.delegate parser:self didDispatchPageRequest:request];
     }
+}
+
+- (void)beginScrapingWithUsername:(NSString *)username password:(NSString *)password {
+    self.username = username;
+    self.password = password;
+    
+    [self beginScraping];
 }
 
 - (void)cancelScraping {
@@ -105,8 +107,12 @@ static RoseBandwidthParser * _defaultParser = NULL;
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    if([self.delegate respondsToSelector:@selector(scraper:didFinishLoadingConnection:)]) {
+    if([self.delegate respondsToSelector:@selector(parser:didFinishLoadingConnection:)]) {
         [self.delegate parser:self didFinishLoadingConnection:connection];
+    }
+    
+    if([self.delegate respondsToSelector:@selector(parser:didBeginParsingData:)]) {
+        [self.delegate parser:self didBeginParsingData:_data];
     }
     
     NSArray * results = PerformHTMLXPathQuery(_data, @"//div[@class='mainContainer']/table[@class='ms-rteTable-1'][1]/tr[@class='ms-rteTableOddRow-1']/td");
@@ -120,14 +126,16 @@ static RoseBandwidthParser * _defaultParser = NULL;
     record.actualDown = [self numberFromMBUsageString:[[results objectAtIndex:3] objectForKey:@"nodeContent"]].floatValue;
     record.actualUp = [self numberFromMBUsageString:[[results objectAtIndex:4] objectForKey:@"nodeContent"]].floatValue;
     
+    if([self.delegate respondsToSelector:@selector(parser:didFinishParsingData:)]) {
+        [self.delegate parser:self didFinishParsingData:_data];
+    }
+    
     if([self.delegate respondsToSelector:@selector(parser:parsedTotalUsageRecord:)]) {
         [self.delegate parser:self parsedTotalUsageRecord:record];
     }
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    //NSLog(@"connection did fail with error: %@",[error description]);
-    
     if([self.delegate respondsToSelector:@selector(parser:encounteredError:)]) {
         [self.delegate parser:self encounteredError:error];
     }

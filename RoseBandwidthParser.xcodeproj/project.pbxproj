@@ -34,6 +34,7 @@
 		22BDA1D114DE281B00BF6A9C /* libprofile_rt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BDA1D014DE281B00BF6A9C /* libprofile_rt.dylib */; };
 		22BDA1D414DE491400BF6A9C /* XPathQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BDA1D214DE491400BF6A9C /* XPathQuery.h */; };
 		22BDA1D514DE491400BF6A9C /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDA1D314DE491400BF6A9C /* XPathQuery.m */; };
+		22BDA1D814DF0CC200BF6A9C /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BDA1D614DF0C9D00BF6A9C /* OCMock.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		22BDA1D014DE281B00BF6A9C /* libprofile_rt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprofile_rt.dylib; path = usr/lib/libprofile_rt.dylib; sourceTree = DEVELOPER_DIR; };
 		22BDA1D214DE491400BF6A9C /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		22BDA1D314DE491400BF6A9C /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		22BDA1D614DF0C9D00BF6A9C /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = Library/Frameworks/OCMock.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22BDA1D814DF0CC200BF6A9C /* OCMock.framework in Frameworks */,
 				22BDA1B414DC705600BF6A9C /* SenTestingKit.framework in Frameworks */,
 				229ACA1614DBA2B2004350CA /* Cocoa.framework in Frameworks */,
 				229ACA1914DBA2B2004350CA /* RoseBandwidthParser.framework in Frameworks */,
@@ -111,7 +114,6 @@
 		229AC9EF14DBA2B1004350CA = {
 			isa = PBXGroup;
 			children = (
-				22BDA1D014DE281B00BF6A9C /* libprofile_rt.dylib */,
 				229ACA0414DBA2B2004350CA /* RoseBandwidthParser */,
 				229ACA1A14DBA2B2004350CA /* RoseBandwidthParserTests */,
 				229AC9FD14DBA2B2004350CA /* Frameworks */,
@@ -131,6 +133,8 @@
 		229AC9FD14DBA2B2004350CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22BDA1D014DE281B00BF6A9C /* libprofile_rt.dylib */,
+				22BDA1D614DF0C9D00BF6A9C /* OCMock.framework */,
 				229AC9FE14DBA2B2004350CA /* Cocoa.framework */,
 				229ACA1414DBA2B2004350CA /* SenTestingKit.framework */,
 				229ACA0014DBA2B2004350CA /* Other Frameworks */,
@@ -176,9 +180,9 @@
 		229ACA1A14DBA2B2004350CA /* RoseBandwidthParserTests */ = {
 			isa = PBXGroup;
 			children = (
+				229ACA1B14DBA2B2004350CA /* Supporting Files */,
 				229ACA2014DBA2B2004350CA /* RoseBandwidthParserTests.h */,
 				229ACA2114DBA2B3004350CA /* RoseBandwidthParserTests.m */,
-				229ACA1B14DBA2B2004350CA /* Supporting Files */,
 				22BDA1AD14DC6EBA00BF6A9C /* RBMachineUsageRecordTests.h */,
 				22BDA1AE14DC6EBA00BF6A9C /* RBMachineUsageRecordTests.m */,
 				22BDA1C514DE131D00BF6A9C /* RBTotalUsageRecordTests.h */,
