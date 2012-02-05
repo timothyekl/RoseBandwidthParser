@@ -15,6 +15,8 @@
  */
 @interface RBUsageRecord : NSObject
 
+@property (nonatomic, strong) NSString * username;
+@property (nonatomic, strong) NSDate * timestamp;
 @property (nonatomic, assign) float policyUp;
 @property (nonatomic, assign) float policyDown;
 @property (nonatomic, assign) float actualUp;

@@ -11,6 +11,8 @@
 
 @implementation RBUsageRecord
 
+@synthesize username = _username;
+@synthesize timestamp = _timestamp;
 @synthesize policyUp = _policyUp;
 @synthesize policyDown = _policyDown;
 @synthesize actualUp = _actualUp;

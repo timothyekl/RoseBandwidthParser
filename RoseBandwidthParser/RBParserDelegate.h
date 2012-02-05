@@ -14,11 +14,11 @@
 @protocol RBParserDelegate <NSObject>
 
 @optional
-- (void)scraper:(RoseBandwidthParser *)parser didDispatchPageRequest:(NSURLRequest *)request;
-- (void)scraper:(RoseBandwidthParser *)parser didFinishLoadingConnection:(NSURLConnection *)connection;
-- (void)scraper:(RoseBandwidthParser *)parser didBeginParsingData:(NSData *)data;
-- (void)scraper:(RoseBandwidthParser *)parser didFinishParsingData:(NSData *)data;
-- (void)scraper:(RoseBandwidthParser *)parser foundBandwidthUsageAmounts:(RBTotalUsageRecord *)usage;
-- (void)scraper:(RoseBandwidthParser *)parser encounteredError:(NSError *)error;
+- (void)parser:(RoseBandwidthParser *)parser didDispatchPageRequest:(NSURLRequest *)request;
+- (void)parser:(RoseBandwidthParser *)parser didFinishLoadingConnection:(NSURLConnection *)connection;
+- (void)parser:(RoseBandwidthParser *)parser didBeginParsingData:(NSData *)data;
+- (void)parser:(RoseBandwidthParser *)parser didFinishParsingData:(NSData *)data;
+- (void)parser:(RoseBandwidthParser *)parser parsedTotalUsageRecord:(RBTotalUsageRecord *)usage;
+- (void)parser:(RoseBandwidthParser *)parser encounteredError:(NSError *)error;
 
 @end

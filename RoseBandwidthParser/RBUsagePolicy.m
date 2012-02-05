@@ -8,6 +8,7 @@
 
 #import "RBUsagePolicy.h"
 
+#import "RBUsagePolicy2012.h"
 #import "RBTotalUsageRecord.h"
 
 @interface RBUsagePolicy()
@@ -46,6 +47,10 @@
 
 + (NSNumber *)defaultBandwidthPolicyKey {
     return [NSNumber numberWithFloat:0.0];
+}
+
++ (RBUsagePolicy *)currentPolicy {
+    return [[RBUsagePolicy2012 alloc] init];
 }
 
 @end

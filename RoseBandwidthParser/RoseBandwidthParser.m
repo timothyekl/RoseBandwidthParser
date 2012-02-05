@@ -8,10 +8,28 @@
 
 #import "RoseBandwidthParser.h"
 
+#import "RBTotalUsageRecord.h"
+#import "RBUsagePolicy.h"
+#import "XPathQuery.h"
+
+#define FETCH_TIMEOUT 10.0
+
+@interface RoseBandwidthParser()
+
+- (NSNumber *)numberFromMBUsageString:(NSString *)str;
+
+@end
+
 @implementation RoseBandwidthParser
 
 @synthesize dataSourceURL = _dataSourceURL;
 @synthesize delegate = _delegate;
+
+NSMutableData * _data;
+NSURLConnection * _conn;
+
+NSString * _username;
+NSString * _password;
 
 static RoseBandwidthParser * _defaultParser = NULL;
 
@@ -24,6 +42,7 @@ static RoseBandwidthParser * _defaultParser = NULL;
     if (self) {
         // Initialization code here.
         self.dataSourceURL = sourceURL;
+        _data = [[NSMutableData alloc] init];
     }
     
     return self;
@@ -37,6 +56,90 @@ static RoseBandwidthParser * _defaultParser = NULL;
     }
     
     return _defaultParser;
+}
+
+#pragma mark -
+#pragma mark Actions
+
+- (void)beginScrapingWithUsername:(NSString *)username password:(NSString *)password {
+    _username = username;
+    _password = password;
+    
+    NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:self.dataSourceURL
+                                                                 cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData 
+                                                             timeoutInterval:FETCH_TIMEOUT];
+    _conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [_conn start];
+    
+    if([self.delegate respondsToSelector:@selector(parser:didDispatchPageRequest:)]) {
+        [self.delegate parser:self didDispatchPageRequest:request];
+    }
+}
+
+- (void)cancelScraping {
+    [_conn cancel];
+    if([self.delegate respondsToSelector:@selector(parser:encounteredError:)]) {
+        NSError * err = [[NSError alloc] initWithDomain:@"canceled" code:-1 userInfo:nil];
+        [self.delegate parser:self encounteredError:err];
+    }
+}
+
+#pragma mark -
+#pragma mark NSURLConnection delegate methods
+
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+    if([challenge previousFailureCount] == 0) {
+        NSURLCredential * cred = [[NSURLCredential alloc] initWithUser:_username password:_password persistence:NSURLCredentialPersistenceNone];
+        [[challenge sender] useCredential:cred forAuthenticationChallenge:challenge];
+    } else {
+        [[challenge sender] cancelAuthenticationChallenge:challenge];
+    }
+}
+
+- (void)connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+    // Nothing to see here, move along...
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    [_data appendData:data];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    if([self.delegate respondsToSelector:@selector(scraper:didFinishLoadingConnection:)]) {
+        [self.delegate parser:self didFinishLoadingConnection:connection];
+    }
+    
+    NSArray * results = PerformHTMLXPathQuery(_data, @"//div[@class='mainContainer']/table[@class='ms-rteTable-1'][1]/tr[@class='ms-rteTableOddRow-1']/td");
+    
+    RBUsagePolicy * policy = [RBUsagePolicy currentPolicy];
+    RBTotalUsageRecord * record = [[RBTotalUsageRecord alloc] initWithPolicy:policy];
+    record.username = _username;
+    record.timestamp = [NSDate date];
+    record.policyDown = [self numberFromMBUsageString:[[results objectAtIndex:1] objectForKey:@"nodeContent"]].floatValue;
+    record.policyUp = [self numberFromMBUsageString:[[results objectAtIndex:2] objectForKey:@"nodeContent"]].floatValue;
+    record.actualDown = [self numberFromMBUsageString:[[results objectAtIndex:3] objectForKey:@"nodeContent"]].floatValue;
+    record.actualUp = [self numberFromMBUsageString:[[results objectAtIndex:4] objectForKey:@"nodeContent"]].floatValue;
+    
+    if([self.delegate respondsToSelector:@selector(parser:parsedTotalUsageRecord:)]) {
+        [self.delegate parser:self parsedTotalUsageRecord:record];
+    }
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    //NSLog(@"connection did fail with error: %@",[error description]);
+    
+    if([self.delegate respondsToSelector:@selector(parser:encounteredError:)]) {
+        [self.delegate parser:self encounteredError:error];
+    }
+}
+
+#pragma mark -
+#pragma mark Helper methods
+
+- (NSNumber *)numberFromMBUsageString:(NSString *)str {
+    NSString * stripped = [[str stringByReplacingOccurrencesOfString:@" MB" withString:@""] stringByReplacingOccurrencesOfString:@"," withString:@""];
+    NSNumber * number = [NSDecimalNumber decimalNumberWithString:stripped];
+    return number;
 }
 
 @end

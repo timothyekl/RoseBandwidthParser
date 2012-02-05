@@ -32,6 +32,8 @@
 		22BDA1C914DE132500BF6A9C /* RBTotalUsageRecordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDA1C614DE131D00BF6A9C /* RBTotalUsageRecordTests.m */; };
 		22BDA1CC14DE138B00BF6A9C /* RBUsagePolicyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDA1CB14DE138B00BF6A9C /* RBUsagePolicyTests.m */; };
 		22BDA1D114DE281B00BF6A9C /* libprofile_rt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BDA1D014DE281B00BF6A9C /* libprofile_rt.dylib */; };
+		22BDA1D414DE491400BF6A9C /* XPathQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BDA1D214DE491400BF6A9C /* XPathQuery.h */; };
+		22BDA1D514DE491400BF6A9C /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDA1D314DE491400BF6A9C /* XPathQuery.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		22BDA1CA14DE138B00BF6A9C /* RBUsagePolicyTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBUsagePolicyTests.h; sourceTree = "<group>"; };
 		22BDA1CB14DE138B00BF6A9C /* RBUsagePolicyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBUsagePolicyTests.m; sourceTree = "<group>"; };
 		22BDA1D014DE281B00BF6A9C /* libprofile_rt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprofile_rt.dylib; path = usr/lib/libprofile_rt.dylib; sourceTree = DEVELOPER_DIR; };
+		22BDA1D214DE491400BF6A9C /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		22BDA1D314DE491400BF6A9C /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,8 @@
 				229ACA0B14DBA2B2004350CA /* RoseBandwidthParser.h */,
 				229ACA0C14DBA2B2004350CA /* RoseBandwidthParser.m */,
 				22BDA1BA14DE069200BF6A9C /* RBParserDelegate.h */,
+				22BDA1D214DE491400BF6A9C /* XPathQuery.h */,
+				22BDA1D314DE491400BF6A9C /* XPathQuery.m */,
 				229ACA0514DBA2B2004350CA /* Supporting Files */,
 			);
 			path = RoseBandwidthParser;
@@ -231,6 +237,7 @@
 				22BDA1BF14DE0A2900BF6A9C /* RBUsagePolicy.h in Headers */,
 				22BDA1C314DE0F3900BF6A9C /* RBUsagePolicy2012.h in Headers */,
 				22BDA1C714DE131D00BF6A9C /* RBTotalUsageRecordTests.h in Headers */,
+				22BDA1D414DE491400BF6A9C /* XPathQuery.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +353,7 @@
 				22BDA1AC14DC6B1500BF6A9C /* RBMachineUsageRecord.m in Sources */,
 				22BDA1C014DE0A2900BF6A9C /* RBUsagePolicy.m in Sources */,
 				22BDA1C414DE0F3900BF6A9C /* RBUsagePolicy2012.m in Sources */,
+				22BDA1D514DE491400BF6A9C /* XPathQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,13 +459,15 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RoseBandwidthParser/RoseBandwidthParser-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "RoseBandwidthParser/RoseBandwidthParser-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_DIR)/usr/lib\"",
 				);
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -470,12 +480,15 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RoseBandwidthParser/RoseBandwidthParser-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "RoseBandwidthParser/RoseBandwidthParser-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(DEVELOPER_DIR)/usr/lib\"",
 				);
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;

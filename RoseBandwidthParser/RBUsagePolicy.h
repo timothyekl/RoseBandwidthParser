@@ -18,6 +18,7 @@
  */
 - (id)initWithBandwidthBoundaries:(NSDictionary *)boundaries;
 + (NSNumber *)defaultBandwidthPolicyKey;
++ (RBUsagePolicy *)currentPolicy;
 - (NSString *)defaultBandwidthClass;
 - (NSString *)bandwidthClassForUsage:(RBTotalUsageRecord *)totalUsage;
 

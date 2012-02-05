@@ -12,7 +12,7 @@
 
 static NSString * kBandwidthParserDefaultSource = @"https://netreg.rose-hulman.edu/tools/networkUsage.pl";
 
-@interface RoseBandwidthParser : NSObject
+@interface RoseBandwidthParser : NSObject <NSXMLParserDelegate>
 
 @property (nonatomic, strong) NSURL * dataSourceURL;
 @property (nonatomic, unsafe_unretained) id<RBParserDelegate> delegate;
@@ -20,5 +20,8 @@ static NSString * kBandwidthParserDefaultSource = @"https://netreg.rose-hulman.e
 + (RoseBandwidthParser *)defaultParser;
 
 - (id)initWithSourceURL:(NSURL *)sourceURL;
+
+- (void)beginScrapingWithUsername:(NSString *)username password:(NSString *)password;
+- (void)cancelScraping;
 
 @end
