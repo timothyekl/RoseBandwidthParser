@@ -14,6 +14,14 @@
 @synthesize hostName = _hostName;
 @synthesize comment = _comment;
 
+- (id)initWithPolicy:(RBUsagePolicy *)policy hostName:(NSString *)hostName comment:(NSString *)comment {
+    if((self = [super initWithPolicy:policy])) {
+        self.hostName = hostName;
+        self.comment = comment;
+    }
+    return self;
+}
+
 - (NSString *)macAddressString {
     char macChars[16] = "0123456789ABCDEF";
     char macAddressCStr[18] = "00:00:00:00:00:00";

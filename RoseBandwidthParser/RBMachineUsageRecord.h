@@ -16,5 +16,6 @@
 
 - (NSString *)macAddressString;
 - (void)setMacAddressFromString:(NSString *)macAddressString;
+- (id)initWithPolicy:(RBUsagePolicy *)policy hostName:(NSString *)hostName comment:(NSString *)comment;
 
 @end

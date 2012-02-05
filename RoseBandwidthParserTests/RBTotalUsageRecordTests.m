@@ -8,11 +8,16 @@
 
 #import "RBTotalUsageRecordTests.h"
 #import "RBTotalUsageRecord.h"
+#import "RBUsagePolicy2012.h"
 
 @implementation RBTotalUsageRecordTests
 
 - (void)testInit {
-    //RBTotalUsageRecord * record = [[RBTotalUsageRecord alloc] initWithPolicy:<#(RBUsagePolicy *)#>
+    RBUsagePolicy * policy = [[RBUsagePolicy2012 alloc] init];
+    RBTotalUsageRecord * record = [[RBTotalUsageRecord alloc] initWithPolicy:policy];
+    
+    STAssertNotNil(record.machineRecords, @"Total usage record had nil machine records array");
+    STAssertEquals(record.machineRecords.count, (NSUInteger)0, @"Empty total usage record had machine usage record");
 }
 
 @end

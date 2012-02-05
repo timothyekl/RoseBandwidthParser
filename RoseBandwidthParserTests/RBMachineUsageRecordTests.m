@@ -9,6 +9,7 @@
 #import "RBMachineUsageRecordTests.h"
 
 #import "RBMachineUsageRecord.h"
+#import "RBUsagePolicy2012.h"
 
 @implementation RBMachineUsageRecordTests
 
@@ -24,6 +25,14 @@
 // All code under test must be linked into the Unit Test bundle
 - (void)testMath {
     STAssertTrue((1 + 1) == 2, @"Compiler isn't feeling well today :-(");
+}
+
+- (void)testInit {
+    RBUsagePolicy * policy = [[RBUsagePolicy2012 alloc] init];
+    RBMachineUsageRecord * record = [[RBMachineUsageRecord alloc] initWithPolicy:policy hostName:@"host" comment:@"comment"];
+    
+    STAssertTrue([record.hostName isEqualToString:@"host"], @"Machine usage record did not store host name properly.");
+    STAssertTrue([record.comment isEqualToString:@"comment"], @"Machine usage record did not store comment properly.");
 }
 
 - (void)testMacAddressString {
@@ -42,6 +51,10 @@
         [record setMacAddressFromString:[self.macAddressCases objectForKey:key]];
         STAssertEquals(record.macAddress, (uint64_t)key.longLongValue, @"MAC address not converted properly.");
     }
+    
+    uint64_t macAddress = record.macAddress;
+    [record setMacAddressFromString:@"abcd"];
+    STAssertEquals(macAddress, record.macAddress, @"MAC address set from illegally formatted string");
 }
 
 @end

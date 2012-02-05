@@ -31,6 +31,7 @@
 		22BDA1C714DE131D00BF6A9C /* RBTotalUsageRecordTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BDA1C514DE131D00BF6A9C /* RBTotalUsageRecordTests.h */; };
 		22BDA1C914DE132500BF6A9C /* RBTotalUsageRecordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDA1C614DE131D00BF6A9C /* RBTotalUsageRecordTests.m */; };
 		22BDA1CC14DE138B00BF6A9C /* RBUsagePolicyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDA1CB14DE138B00BF6A9C /* RBUsagePolicyTests.m */; };
+		22BDA1D114DE281B00BF6A9C /* libprofile_rt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BDA1D014DE281B00BF6A9C /* libprofile_rt.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		22BDA1C614DE131D00BF6A9C /* RBTotalUsageRecordTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTotalUsageRecordTests.m; sourceTree = "<group>"; };
 		22BDA1CA14DE138B00BF6A9C /* RBUsagePolicyTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBUsagePolicyTests.h; sourceTree = "<group>"; };
 		22BDA1CB14DE138B00BF6A9C /* RBUsagePolicyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBUsagePolicyTests.m; sourceTree = "<group>"; };
+		22BDA1D014DE281B00BF6A9C /* libprofile_rt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprofile_rt.dylib; path = usr/lib/libprofile_rt.dylib; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22BDA1D114DE281B00BF6A9C /* libprofile_rt.dylib in Frameworks */,
 				229AC9FF14DBA2B2004350CA /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +107,7 @@
 		229AC9EF14DBA2B1004350CA = {
 			isa = PBXGroup;
 			children = (
+				22BDA1D014DE281B00BF6A9C /* libprofile_rt.dylib */,
 				229ACA0414DBA2B2004350CA /* RoseBandwidthParser */,
 				229ACA1A14DBA2B2004350CA /* RoseBandwidthParserTests */,
 				229AC9FD14DBA2B2004350CA /* Frameworks */,
@@ -396,6 +400,8 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -409,6 +415,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -423,12 +430,15 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_LDFLAGS = "";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -442,6 +452,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RoseBandwidthParser/RoseBandwidthParser-Prefix.pch";
 				INFOPLIST_FILE = "RoseBandwidthParser/RoseBandwidthParser-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_DIR)/usr/lib\"",
+				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -456,6 +471,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RoseBandwidthParser/RoseBandwidthParser-Prefix.pch";
 				INFOPLIST_FILE = "RoseBandwidthParser/RoseBandwidthParser-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_DIR)/usr/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
