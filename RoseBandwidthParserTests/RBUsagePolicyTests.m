@@ -48,16 +48,6 @@
     [self performChecksForRecord:record withClass:@"160k" minUsage:4.5f maxUsage:6.0f];
 }
 
-- (void)test2012PolicyExplicitInstantiation {
-    @try {
-        RBUsagePolicy * policy = [[RBUsagePolicy2012 alloc] initWithBandwidthBoundaries:nil];
-        STAssertFalse(TRUE, @"Expected exception from 2012 policy specific instantiation");
-        STAssertNil(policy, @"Expected nil 2012 policy after specific instantiation");
-    }
-    @catch (NSException * exception) { }
-    @finally { }
-}
-
 - (void)performChecksForRecord:(RBTotalUsageRecord *)record withClass:(NSString *)bandwidthClass minUsage:(float)min maxUsage:(float)max {
     for(float usage = min; usage < max; usage += 0.1f) {
         record.policyDown = usage;

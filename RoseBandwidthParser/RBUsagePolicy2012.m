@@ -22,10 +22,4 @@
     return self;
 }
 
-- (id)initWithBandwidthBoundaries:(NSDictionary *)boundaries {
-    [NSException raise:@"IllegalAccessException" 
-                format:@"You cannot instantiate a 2012 policy with custom boundaries."];
-    return nil;
-}
-
 @end
