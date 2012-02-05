@@ -29,4 +29,21 @@
     return [NSString stringWithCString:macAddressCStr encoding:NSASCIIStringEncoding];
 }
 
+- (void)setMacAddressFromString:(NSString *)macAddressString {
+    NSCharacterSet * disallowedCharacterSet = [[NSCharacterSet characterSetWithCharactersInString:@"0123456789ABCDEF"] invertedSet];
+    macAddressString = [[[macAddressString uppercaseString] componentsSeparatedByCharactersInSet:disallowedCharacterSet] componentsJoinedByString:@""];
+    if(macAddressString.length != 12) {
+        return;
+    }
+    
+    uint64_t macAddrValue = 0;
+    for(int i = 0; i < 6; i++) {
+        macAddrValue = macAddrValue << 8;
+        unsigned int tmp;
+        sscanf([[macAddressString substringWithRange:NSMakeRange(i * 2, 2)] cStringUsingEncoding:NSASCIIStringEncoding], "%x", &tmp);
+        macAddrValue |= tmp;
+    }
+    self.macAddress = macAddrValue;
+}
+
 @end

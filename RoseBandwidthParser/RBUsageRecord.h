@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class RBUsagePolicy;
+
 /**
  * Abstract. Don't instantiate.
  */
@@ -17,5 +19,11 @@
 @property (nonatomic, assign) float policyDown;
 @property (nonatomic, assign) float actualUp;
 @property (nonatomic, assign) float actualDown;
+@property (nonatomic, strong, readonly) RBUsagePolicy * policy;
+
+/**
+ * Only call on subclasses.
+ */
+- (id)initWithPolicy:(RBUsagePolicy *)policy;
 
 @end

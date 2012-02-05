@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+#import "RBParserDelegate.h"
+
+static NSString * kBandwidthParserDefaultSource = @"https://netreg.rose-hulman.edu/tools/networkUsage.pl";
+
 @interface RoseBandwidthParser : NSObject
+
+@property (nonatomic, strong) NSURL * dataSourceURL;
+@property (nonatomic, unsafe_unretained) id<RBParserDelegate> delegate;
+
++ (RoseBandwidthParser *)defaultParser;
+
+- (id)initWithSourceURL:(NSURL *)sourceURL;
 
 @end

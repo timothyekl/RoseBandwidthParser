@@ -8,8 +8,21 @@
 
 #import "RBTotalUsageRecord.h"
 
+#import "RBUsagePolicy.h"
+
 @implementation RBTotalUsageRecord
 
-@synthesize bandwidthClass = _bandwidthClass;
+@synthesize machineRecords = _machineRecords;
+
+- (id)initWithPolicy:(RBUsagePolicy *)policy {
+    if((self = [super initWithPolicy:policy])) {
+        _machineRecords = [NSArray array];
+    }
+    return self;
+}
+
+- (NSString *)bandwidthClass {
+    return [self.policy bandwidthClassForUsage:self];
+}
 
 @end

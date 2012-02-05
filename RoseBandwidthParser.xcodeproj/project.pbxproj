@@ -23,6 +23,14 @@
 		22BDA1AF14DC6EBA00BF6A9C /* RBMachineUsageRecordTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BDA1AD14DC6EBA00BF6A9C /* RBMachineUsageRecordTests.h */; };
 		22BDA1B414DC705600BF6A9C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229ACA1414DBA2B2004350CA /* SenTestingKit.framework */; };
 		22BDA1B514DC70FE00BF6A9C /* RBMachineUsageRecordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDA1AE14DC6EBA00BF6A9C /* RBMachineUsageRecordTests.m */; };
+		22BDA1BB14DE069200BF6A9C /* RBParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BDA1BA14DE069200BF6A9C /* RBParserDelegate.h */; };
+		22BDA1BF14DE0A2900BF6A9C /* RBUsagePolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BDA1BD14DE0A2900BF6A9C /* RBUsagePolicy.h */; };
+		22BDA1C014DE0A2900BF6A9C /* RBUsagePolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDA1BE14DE0A2900BF6A9C /* RBUsagePolicy.m */; };
+		22BDA1C314DE0F3900BF6A9C /* RBUsagePolicy2012.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BDA1C114DE0F3900BF6A9C /* RBUsagePolicy2012.h */; };
+		22BDA1C414DE0F3900BF6A9C /* RBUsagePolicy2012.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDA1C214DE0F3900BF6A9C /* RBUsagePolicy2012.m */; };
+		22BDA1C714DE131D00BF6A9C /* RBTotalUsageRecordTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BDA1C514DE131D00BF6A9C /* RBTotalUsageRecordTests.h */; };
+		22BDA1C914DE132500BF6A9C /* RBTotalUsageRecordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDA1C614DE131D00BF6A9C /* RBTotalUsageRecordTests.m */; };
+		22BDA1CC14DE138B00BF6A9C /* RBUsagePolicyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDA1CB14DE138B00BF6A9C /* RBUsagePolicyTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +68,15 @@
 		22BDA1AA14DC6B1500BF6A9C /* RBMachineUsageRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBMachineUsageRecord.m; sourceTree = "<group>"; };
 		22BDA1AD14DC6EBA00BF6A9C /* RBMachineUsageRecordTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBMachineUsageRecordTests.h; sourceTree = "<group>"; };
 		22BDA1AE14DC6EBA00BF6A9C /* RBMachineUsageRecordTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBMachineUsageRecordTests.m; sourceTree = "<group>"; };
+		22BDA1BA14DE069200BF6A9C /* RBParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBParserDelegate.h; sourceTree = "<group>"; };
+		22BDA1BD14DE0A2900BF6A9C /* RBUsagePolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBUsagePolicy.h; sourceTree = "<group>"; };
+		22BDA1BE14DE0A2900BF6A9C /* RBUsagePolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBUsagePolicy.m; sourceTree = "<group>"; };
+		22BDA1C114DE0F3900BF6A9C /* RBUsagePolicy2012.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBUsagePolicy2012.h; sourceTree = "<group>"; };
+		22BDA1C214DE0F3900BF6A9C /* RBUsagePolicy2012.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBUsagePolicy2012.m; sourceTree = "<group>"; };
+		22BDA1C514DE131D00BF6A9C /* RBTotalUsageRecordTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBTotalUsageRecordTests.h; sourceTree = "<group>"; };
+		22BDA1C614DE131D00BF6A9C /* RBTotalUsageRecordTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTotalUsageRecordTests.m; sourceTree = "<group>"; };
+		22BDA1CA14DE138B00BF6A9C /* RBUsagePolicyTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBUsagePolicyTests.h; sourceTree = "<group>"; };
+		22BDA1CB14DE138B00BF6A9C /* RBUsagePolicyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBUsagePolicyTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,9 +143,11 @@
 		229ACA0414DBA2B2004350CA /* RoseBandwidthParser */ = {
 			isa = PBXGroup;
 			children = (
-				22BDA19F14DC691A00BF6A9C /* Model */,
+				22BDA1BC14DE09CC00BF6A9C /* Policies */,
+				22BDA19F14DC691A00BF6A9C /* Usage Records */,
 				229ACA0B14DBA2B2004350CA /* RoseBandwidthParser.h */,
 				229ACA0C14DBA2B2004350CA /* RoseBandwidthParser.m */,
+				22BDA1BA14DE069200BF6A9C /* RBParserDelegate.h */,
 				229ACA0514DBA2B2004350CA /* Supporting Files */,
 			);
 			path = RoseBandwidthParser;
@@ -152,6 +171,10 @@
 				229ACA1B14DBA2B2004350CA /* Supporting Files */,
 				22BDA1AD14DC6EBA00BF6A9C /* RBMachineUsageRecordTests.h */,
 				22BDA1AE14DC6EBA00BF6A9C /* RBMachineUsageRecordTests.m */,
+				22BDA1C514DE131D00BF6A9C /* RBTotalUsageRecordTests.h */,
+				22BDA1C614DE131D00BF6A9C /* RBTotalUsageRecordTests.m */,
+				22BDA1CA14DE138B00BF6A9C /* RBUsagePolicyTests.h */,
+				22BDA1CB14DE138B00BF6A9C /* RBUsagePolicyTests.m */,
 			);
 			path = RoseBandwidthParserTests;
 			sourceTree = "<group>";
@@ -165,7 +188,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		22BDA19F14DC691A00BF6A9C /* Model */ = {
+		22BDA19F14DC691A00BF6A9C /* Usage Records */ = {
 			isa = PBXGroup;
 			children = (
 				22BDA1A114DC693000BF6A9C /* RBUsageRecord.h */,
@@ -175,7 +198,18 @@
 				22BDA1A914DC6B1500BF6A9C /* RBMachineUsageRecord.h */,
 				22BDA1AA14DC6B1500BF6A9C /* RBMachineUsageRecord.m */,
 			);
-			name = Model;
+			name = "Usage Records";
+			sourceTree = "<group>";
+		};
+		22BDA1BC14DE09CC00BF6A9C /* Policies */ = {
+			isa = PBXGroup;
+			children = (
+				22BDA1BD14DE0A2900BF6A9C /* RBUsagePolicy.h */,
+				22BDA1BE14DE0A2900BF6A9C /* RBUsagePolicy.m */,
+				22BDA1C114DE0F3900BF6A9C /* RBUsagePolicy2012.h */,
+				22BDA1C214DE0F3900BF6A9C /* RBUsagePolicy2012.m */,
+			);
+			name = Policies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +223,10 @@
 				22BDA1A714DC6A9100BF6A9C /* RBTotalUsageRecord.h in Headers */,
 				22BDA1AB14DC6B1500BF6A9C /* RBMachineUsageRecord.h in Headers */,
 				22BDA1AF14DC6EBA00BF6A9C /* RBMachineUsageRecordTests.h in Headers */,
+				22BDA1BB14DE069200BF6A9C /* RBParserDelegate.h in Headers */,
+				22BDA1BF14DE0A2900BF6A9C /* RBUsagePolicy.h in Headers */,
+				22BDA1C314DE0F3900BF6A9C /* RBUsagePolicy2012.h in Headers */,
+				22BDA1C714DE131D00BF6A9C /* RBTotalUsageRecordTests.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +340,8 @@
 				22BDA1A414DC693000BF6A9C /* RBUsageRecord.m in Sources */,
 				22BDA1A814DC6A9100BF6A9C /* RBTotalUsageRecord.m in Sources */,
 				22BDA1AC14DC6B1500BF6A9C /* RBMachineUsageRecord.m in Sources */,
+				22BDA1C014DE0A2900BF6A9C /* RBUsagePolicy.m in Sources */,
+				22BDA1C414DE0F3900BF6A9C /* RBUsagePolicy2012.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +351,8 @@
 			files = (
 				22BDA1B514DC70FE00BF6A9C /* RBMachineUsageRecordTests.m in Sources */,
 				229ACA2214DBA2B3004350CA /* RoseBandwidthParserTests.m in Sources */,
+				22BDA1C914DE132500BF6A9C /* RBTotalUsageRecordTests.m in Sources */,
+				22BDA1CC14DE138B00BF6A9C /* RBUsagePolicyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

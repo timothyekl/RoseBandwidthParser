@@ -15,5 +15,6 @@
 @property (nonatomic, strong) NSString * comment;
 
 - (NSString *)macAddressString;
+- (void)setMacAddressFromString:(NSString *)macAddressString;
 
 @end

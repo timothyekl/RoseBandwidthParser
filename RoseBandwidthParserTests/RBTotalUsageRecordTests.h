@@ -1,8 +1,8 @@
 //
-//  RBMachineUsageRecordTests.h
+//  RBTotalUsageRecordTests.h
 //  RoseBandwidthParser
 //
-//  Created by Tim Ekl on 2/3/12.
+//  Created by Tim Ekl on 2/4/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -10,8 +10,6 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface RBMachineUsageRecordTests : SenTestCase
-
-- (NSDictionary *)macAddressCases;
+@interface RBTotalUsageRecordTests : SenTestCase
 
 @end

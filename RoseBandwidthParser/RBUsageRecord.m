@@ -7,6 +7,7 @@
 //
 
 #import "RBUsageRecord.h"
+#import "RBUsagePolicy.h"
 
 @implementation RBUsageRecord
 
@@ -14,5 +15,13 @@
 @synthesize policyDown = _policyDown;
 @synthesize actualUp = _actualUp;
 @synthesize actualDown = _actualDown;
+@synthesize policy = _policy;
+
+- (id)initWithPolicy:(RBUsagePolicy *)policy {
+    if((self = [super init])) {
+        _policy = policy;
+    }
+    return self;
+}
 
 @end
