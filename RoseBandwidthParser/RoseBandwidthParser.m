@@ -9,6 +9,7 @@
 #import "RoseBandwidthParser.h"
 
 #import "RBTotalUsageRecord.h"
+#import "RBMachineUsageRecord.h"
 #import "RBUsagePolicy.h"
 #import "XPathQuery.h"
 
@@ -107,6 +108,7 @@ static RoseBandwidthParser * _defaultParser = NULL;
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    // Delegate notifications
     if([self.delegate respondsToSelector:@selector(parser:didFinishLoadingConnection:)]) {
         [self.delegate parser:self didFinishLoadingConnection:connection];
     }
@@ -115,8 +117,9 @@ static RoseBandwidthParser * _defaultParser = NULL;
         [self.delegate parser:self didBeginParsingData:_data];
     }
     
-    NSArray * results = PerformHTMLXPathQuery(_data, @"//div[@class='mainContainer']/table[@class='ms-rteTable-1'][1]/tr[@class='ms-rteTableOddRow-1']/td");
-    
+    // Grab total data
+    NSArray * results = PerformHTMLXPathQuery([_data copy], @"//div[@class='mainContainer']/table[@class='ms-rteTable-1'][1]/tr[@class='ms-rteTableOddRow-1']/td");
+
     RBUsagePolicy * policy = [RBUsagePolicy currentPolicy];
     RBTotalUsageRecord * record = [[RBTotalUsageRecord alloc] initWithPolicy:policy];
     record.username = _username;
@@ -126,6 +129,29 @@ static RoseBandwidthParser * _defaultParser = NULL;
     record.actualDown = [self numberFromMBUsageString:[[results objectAtIndex:3] objectForKey:@"nodeContent"]].floatValue;
     record.actualUp = [self numberFromMBUsageString:[[results objectAtIndex:4] objectForKey:@"nodeContent"]].floatValue;
     
+    // Now go for machine-specific data
+    results = PerformHTMLXPathQuery([_data copy], @"//div[@class='mainContainer']/table[@class='ms-rteTable-1'][2]/tr");
+    
+    for(id row in [results subarrayWithRange:NSMakeRange(1, results.count - 1)]) {
+        id result = [row objectForKey:@"nodeChildArray"];
+        
+        NSString * macAddressString = [[result objectAtIndex:0] objectForKey:@"nodeContent"];
+        NSString * hostname = [[result objectAtIndex:1] objectForKey:@"nodeContent"];
+        NSString * comment = [[result objectAtIndex:2] objectForKey:@"nodeContent"];
+        RBMachineUsageRecord * machineRecord = [[RBMachineUsageRecord alloc] initWithPolicy:policy hostName:hostname comment:comment];
+        
+        machineRecord.timestamp = record.timestamp;
+        machineRecord.username = record.username;
+        [machineRecord setMacAddressFromString:macAddressString];
+        machineRecord.policyDown = [self numberFromMBUsageString:[[result objectAtIndex:3] objectForKey:@"nodeContent"]].floatValue;
+        machineRecord.policyUp = [self numberFromMBUsageString:[[result objectAtIndex:4] objectForKey:@"nodeContent"]].floatValue;
+        machineRecord.actualDown = [self numberFromMBUsageString:[[result objectAtIndex:5] objectForKey:@"nodeContent"]].floatValue;
+        machineRecord.actualUp = [self numberFromMBUsageString:[[result objectAtIndex:6] objectForKey:@"nodeContent"]].floatValue;
+        
+        [record.machineRecords addObject:machineRecord];
+    }
+    
+    // More delegate notifications
     if([self.delegate respondsToSelector:@selector(parser:didFinishParsingData:)]) {
         [self.delegate parser:self didFinishParsingData:_data];
     }

@@ -10,7 +10,8 @@
 
 @interface RBTotalUsageRecord : RBUsageRecord
 
-@property (nonatomic, strong, readonly) NSString * bandwidthClass;
-@property (nonatomic, strong, readonly) NSArray * machineRecords;
+@property (nonatomic, strong) NSMutableArray * machineRecords;
+
+- (NSString *)bandwidthClass;
 
 @end

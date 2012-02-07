@@ -12,6 +12,7 @@
 #import "RoseBandwidthParser.h"
 #import "RBParserDelegate.h"
 #import "RBTotalUsageRecord.h"
+#import "RBMachineUsageRecord.h"
 
 static NSString * kTestingDataSource = @"http://lithium3141.com/rosebandwidth/networkUsage.php?policyDown=1500&policyUp=1500";
 
@@ -108,6 +109,26 @@ static NSString * kTestingDataSource = @"http://lithium3141.com/rosebandwidth/ne
     [parser beginScrapingWithUsername:@"foo" password:@"bar"];
     
     [self tryVerifyingMock:mockDelegate forTimeInterval:1.0 inIncrementsOf:0.5];
+}
+
+- (void)testScrapedMachineRecords {
+    RoseBandwidthParser * parser = [[RoseBandwidthParser alloc] initWithSourceURL:[NSURL URLWithString:kTestingDataSource]];
+    id mockDelegate = [OCMockObject niceMockForProtocol:@protocol(RBParserDelegate)];
+    parser.delegate = mockDelegate;
+    
+    [[mockDelegate expect] parser:parser parsedTotalUsageRecord:[OCMArg checkWithBlock:^(id val) {
+        if(![val isKindOfClass:[RBTotalUsageRecord class]]) return NO;
+        if([[(RBTotalUsageRecord *)val machineRecords] count] != 4) return NO;
+        for(id machineRecord in [(RBTotalUsageRecord *)val machineRecords]) {
+            if(![machineRecord isKindOfClass:[RBMachineUsageRecord class]]) return NO;
+            if([(RBMachineUsageRecord *)machineRecord policyDown] == 0) return NO;
+        }
+        return YES;
+    }]];
+    
+    [parser beginScrapingWithUsername:@"foo" password:@"bar"];
+    
+    [self tryVerifyingMock:mockDelegate forTimeInterval:5.0 inIncrementsOf:0.5];
 }
 
 #pragma mark -

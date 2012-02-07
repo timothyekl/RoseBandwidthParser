@@ -16,7 +16,7 @@
 
 - (id)initWithPolicy:(RBUsagePolicy *)policy {
     if((self = [super initWithPolicy:policy])) {
-        _machineRecords = [NSArray array];
+        _machineRecords = [NSMutableArray array];
     }
     return self;
 }
