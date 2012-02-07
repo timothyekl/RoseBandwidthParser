@@ -10,4 +10,6 @@
 
 @interface RoseBandwidthParserTests : SenTestCase
 
+- (void)tryVerifyingMock:(id)mockObject forTimeInterval:(NSTimeInterval)interval inIncrementsOf:(NSTimeInterval)increment;
+
 @end

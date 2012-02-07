@@ -75,10 +75,7 @@ static NSString * kTestingDataSource = @"http://lithium3141.com/rosebandwidth/ne
     
     [parser beginScrapingWithUsername:@"foo" password:@"bar"];
     
-    // Run for five seconds to allow time for fetching & parsing
-    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:5.0]];
-    
-    [mockDelegate verify];
+    [self tryVerifyingMock:mockDelegate forTimeInterval:10.0 inIncrementsOf:0.5];
 }
 
 - (void)testCanceledScraping {
@@ -110,10 +107,25 @@ static NSString * kTestingDataSource = @"http://lithium3141.com/rosebandwidth/ne
     
     [parser beginScrapingWithUsername:@"foo" password:@"bar"];
     
-    // Run for a second to allow parsing/lookup failure on URL string "foo"
-    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0]];
+    [self tryVerifyingMock:mockDelegate forTimeInterval:1.0 inIncrementsOf:0.5];
+}
+
+#pragma mark -
+#pragma mark Helper methods
+
+- (void)tryVerifyingMock:(id)mockObject forTimeInterval:(NSTimeInterval)interval inIncrementsOf:(NSTimeInterval)increment {
+    NSTimeInterval passed = 0;
+    while(passed < interval) {
+        @try {
+            [mockObject verify];
+            break;
+        }
+        @catch (NSException * e) {}
+        [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:increment]];
+        passed += increment;
+    }
     
-    [mockDelegate verify];
+    [mockObject verify];
 }
 
 @end
