@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		227E7585156B0C41007498B9 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227E7584156B0C40007498B9 /* OCMock.framework */; };
+		227E7586156B0C41007498B9 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227E7584156B0C40007498B9 /* OCMock.framework */; };
 		229AC9FF14DBA2B2004350CA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229AC9FE14DBA2B2004350CA /* Cocoa.framework */; };
 		229ACA0914DBA2B2004350CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 229ACA0714DBA2B2004350CA /* InfoPlist.strings */; };
 		229ACA0D14DBA2B2004350CA /* RoseBandwidthParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 229ACA0C14DBA2B2004350CA /* RoseBandwidthParser.m */; };
@@ -31,10 +33,8 @@
 		22BDA1C714DE131D00BF6A9C /* RBTotalUsageRecordTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BDA1C514DE131D00BF6A9C /* RBTotalUsageRecordTests.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22BDA1C914DE132500BF6A9C /* RBTotalUsageRecordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDA1C614DE131D00BF6A9C /* RBTotalUsageRecordTests.m */; };
 		22BDA1CC14DE138B00BF6A9C /* RBUsagePolicyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDA1CB14DE138B00BF6A9C /* RBUsagePolicyTests.m */; };
-		22BDA1D114DE281B00BF6A9C /* libprofile_rt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BDA1D014DE281B00BF6A9C /* libprofile_rt.dylib */; };
 		22BDA1D414DE491400BF6A9C /* XPathQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BDA1D214DE491400BF6A9C /* XPathQuery.h */; };
 		22BDA1D514DE491400BF6A9C /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BDA1D314DE491400BF6A9C /* XPathQuery.m */; };
-		22BDA1D814DF0CC200BF6A9C /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BDA1D614DF0C9D00BF6A9C /* OCMock.framework */; };
 		22BDA1E214E9727E00BF6A9C /* RoseBandwidthParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 229ACA0B14DBA2B2004350CA /* RoseBandwidthParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -49,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		227E7584156B0C40007498B9 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMock.framework; sourceTree = "<group>"; };
 		229AC9FB14DBA2B2004350CA /* RoseBandwidthParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RoseBandwidthParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		229AC9FE14DBA2B2004350CA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		229ACA0114DBA2B2004350CA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -82,10 +83,8 @@
 		22BDA1C614DE131D00BF6A9C /* RBTotalUsageRecordTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBTotalUsageRecordTests.m; sourceTree = "<group>"; };
 		22BDA1CA14DE138B00BF6A9C /* RBUsagePolicyTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBUsagePolicyTests.h; sourceTree = "<group>"; };
 		22BDA1CB14DE138B00BF6A9C /* RBUsagePolicyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBUsagePolicyTests.m; sourceTree = "<group>"; };
-		22BDA1D014DE281B00BF6A9C /* libprofile_rt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprofile_rt.dylib; path = usr/lib/libprofile_rt.dylib; sourceTree = DEVELOPER_DIR; };
 		22BDA1D214DE491400BF6A9C /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		22BDA1D314DE491400BF6A9C /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
-		22BDA1D614DF0C9D00BF6A9C /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = Library/Frameworks/OCMock.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +92,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22BDA1D114DE281B00BF6A9C /* libprofile_rt.dylib in Frameworks */,
 				229AC9FF14DBA2B2004350CA /* Cocoa.framework in Frameworks */,
+				227E7585156B0C41007498B9 /* OCMock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,10 +101,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22BDA1D814DF0CC200BF6A9C /* OCMock.framework in Frameworks */,
 				22BDA1B414DC705600BF6A9C /* SenTestingKit.framework in Frameworks */,
 				229ACA1614DBA2B2004350CA /* Cocoa.framework in Frameworks */,
 				229ACA1914DBA2B2004350CA /* RoseBandwidthParser.framework in Frameworks */,
+				227E7586156B0C41007498B9 /* OCMock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,8 +133,7 @@
 		229AC9FD14DBA2B2004350CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				22BDA1D014DE281B00BF6A9C /* libprofile_rt.dylib */,
-				22BDA1D614DF0C9D00BF6A9C /* OCMock.framework */,
+				227E7584156B0C40007498B9 /* OCMock.framework */,
 				229AC9FE14DBA2B2004350CA /* Cocoa.framework */,
 				229ACA1414DBA2B2004350CA /* SenTestingKit.framework */,
 				229ACA0014DBA2B2004350CA /* Other Frameworks */,
@@ -427,6 +425,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
@@ -451,6 +450,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = "";
 				SDKROOT = macosx;
@@ -462,15 +462,16 @@
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RoseBandwidthParser/RoseBandwidthParser-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "RoseBandwidthParser/RoseBandwidthParser-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(DEVELOPER_DIR)/usr/lib\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -483,15 +484,16 @@
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RoseBandwidthParser/RoseBandwidthParser-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "RoseBandwidthParser/RoseBandwidthParser-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(DEVELOPER_DIR)/usr/lib\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -502,7 +504,11 @@
 		229ACA2914DBA2B3004350CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RoseBandwidthParser/RoseBandwidthParser-Prefix.pch";
 				INFOPLIST_FILE = "RoseBandwidthParserTests/RoseBandwidthParserTests-Info.plist";
@@ -514,7 +520,11 @@
 		229ACA2A14DBA2B3004350CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RoseBandwidthParser/RoseBandwidthParser-Prefix.pch";
 				INFOPLIST_FILE = "RoseBandwidthParserTests/RoseBandwidthParserTests-Info.plist";
